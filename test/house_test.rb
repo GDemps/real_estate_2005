@@ -29,7 +29,7 @@ class HouseTest < Minitest::Test
     assert_equal true, house_10.above_market_average?
   end
 
-  def test_price_per_sq_ft
+  def test_rooms_per_category
     house = House.new("$400000", "123 sugar lane")
     room_1 = Room.new(:bedroom, 10, '13')
     room_2 = Room.new(:bedroom, 11, '15')
@@ -55,5 +55,25 @@ class HouseTest < Minitest::Test
     house.add_room(room_4)
     assert_equal 1900, house.area
   end
+
+  def test_house_details
+    house = House.new("$400000", "123 sugar lane")
+    assert_equal ({"price" => 400000, "address" => "123 sugar lane"}), house.details
+  end
+
+  def test_price_per_sq_ft
+    house = House.new("$400000", "123 sugar lane")
+    room_1 = Room.new(:bedroom, 10, '13')
+    room_2 = Room.new(:bedroom, 11, '15')
+    room_3 = Room.new(:living_room, 25, '15')
+    room_4 = Room.new(:basement, 30, '41')
+    house.add_room(room_4)
+    house.add_room(room_1)
+    house.add_room(room_3)
+    house.add_room(room_2)
+    assert_equal 210.53, house.price_per_square_foot
+  end
+
+
 
 end
