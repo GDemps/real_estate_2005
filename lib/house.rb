@@ -43,4 +43,11 @@ class House
     sorted.reverse
   end
 
+  def rooms_by_category
+    bedroom = rooms_from_category(:bedroom)
+    living_room = rooms_from_category(:living_room)
+    basement = rooms_from_category(:basement)
+    { bedroom: bedroom, living_room: living_room, basement: basement}
+  end
+
 end
