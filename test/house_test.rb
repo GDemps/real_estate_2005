@@ -84,7 +84,7 @@ class HouseTest < Minitest::Test
     house.add_room(room_1)
     house.add_room(room_3)
     house.add_room(room_2)
-    assert_equal 0, house.rooms_sorted_by_area
+    assert_equal [room_4, room_3, room_2, room_1], house.rooms_sorted_by_area
   end
 
 end
