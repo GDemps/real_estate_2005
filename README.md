@@ -156,8 +156,7 @@ pry(main)> house.add_room(room_1)
 
 pry(main)> house.add_room(room_3)
 
-pry(main)> house.add_room(room_2)    
-
+pry(main)>house.add_room(room_2)    
 pry(main)> house.price_per_square_foot
 #=> 210.53
 
